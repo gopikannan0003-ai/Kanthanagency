@@ -1,0 +1,737 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    overflow: hidden;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* =========================================
+   HOME BACKGROUND
+========================================= */
+
+.home {
+
+    position: relative;
+
+    width: 100%;
+    height: 100svh;
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        url("images/hari.jpg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(5, 10, 35, 0.05),
+            rgba(0, 0, 15, 0.62)
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   LOGO CONTAINER
+========================================= */
+
+.logo-container {
+
+    position: relative;
+
+    width: 245px;
+
+    height: 245px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: floatingLogo 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   ROUND LOGO
+========================================= */
+
+.logo {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 225px;
+
+    height: 225px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid #f8c84a;
+
+    background: #000;
+
+    box-shadow:
+
+        0 0 0 5px rgba(255, 210, 80, 0.08),
+
+        0 0 25px rgba(255, 194, 50, 0.45),
+
+        0 0 55px rgba(255, 175, 30, 0.25);
+
+    transition: 0.4s ease;
+}
+
+
+.logo:hover {
+
+    transform: scale(1.04);
+
+    box-shadow:
+
+        0 0 0 6px rgba(255, 210, 80, 0.10),
+
+        0 0 35px rgba(255, 194, 50, 0.65),
+
+        0 0 75px rgba(255, 175, 30, 0.35);
+}
+
+
+/* =========================================
+   LOGO GLOW
+========================================= */
+
+.logo-glow {
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 197, 60, 0.28),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    animation: glowPulse 3s ease-in-out infinite;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   LOGO FLOATING
+========================================= */
+
+@keyframes floatingLogo {
+
+    0% {
+
+        transform:
+            translateY(0px)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-13px)
+            rotate(0.5deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0px)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================
+   GLOW ANIMATION
+========================================= */
+
+@keyframes glowPulse {
+
+    0% {
+
+        opacity: 0.45;
+
+        transform: scale(0.95);
+
+    }
+
+    50% {
+
+        opacity: 0.85;
+
+        transform: scale(1.08);
+
+    }
+
+    100% {
+
+        opacity: 0.45;
+
+        transform: scale(0.95);
+
+    }
+
+}
+
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+h1 {
+
+    margin-top: 20px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 30px;
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #fff8dc;
+
+    text-shadow:
+
+        0 3px 12px rgba(0,0,0,0.8),
+
+        0 0 20px rgba(255,210,90,0.15);
+
+    animation: textAppear 1s ease forwards;
+}
+
+
+h1 span {
+
+    display: block;
+
+    color: #ffd45a;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   GOLD LINE
+========================================= */
+
+.gold-line {
+
+    width: 230px;
+
+    margin-top: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.gold-line span {
+
+    width: 75px;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffd45a
+        );
+}
+
+
+.gold-line span:last-child {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffd45a,
+            transparent
+        );
+}
+
+
+.gold-line i {
+
+    color: #ffd45a;
+
+    font-size: 13px;
+
+    font-style: normal;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+p {
+
+    width: 100%;
+
+    max-width: 410px;
+
+    margin-top: 15px;
+
+    color:
+
+        rgba(255,255,255,0.82);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+
+    text-shadow:
+
+        0 2px 8px rgba(0,0,0,0.8);
+}
+
+
+/* =========================================
+   EXPLORE BUTTON
+========================================= */
+
+.explore-button {
+
+    position: relative;
+
+    margin-top: 25px;
+
+    width: 230px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffe98a,
+            #ffc02e,
+            #f5a900
+        );
+
+    color: #17120a;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(255,178,20,0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Arrow */
+
+.explore-button b {
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    transition: 0.3s;
+}
+
+
+.explore-button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+
+        0 14px 38px
+        rgba(255,178,20,0.55);
+}
+
+
+.explore-button:hover b {
+
+    transform: translateX(5px);
+}
+
+
+.explore-button:active {
+
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   BOTTOM BRAND
+========================================= */
+
+.bottom-text {
+
+    margin-top: 24px;
+
+    color:
+
+        rgba(255,255,255,0.55);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================
+   TEXT ANIMATION
+========================================= */
+
+@keyframes textAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .home {
+
+        min-height: 100svh;
+
+        background-position:
+            center center;
+    }
+
+
+    .content {
+
+        padding:
+
+            20px 18px 25px;
+    }
+
+
+    /* Smaller round logo */
+
+    .logo-container {
+
+        width: 190px;
+
+        height: 190px;
+    }
+
+
+    .logo {
+
+        width: 175px;
+
+        height: 175px;
+
+        border-width: 3px;
+    }
+
+
+    .logo-glow {
+
+        width: 150px;
+
+        height: 150px;
+    }
+
+
+    /* Title */
+
+    h1 {
+
+        margin-top: 15px;
+
+        font-size: 21px;
+
+        letter-spacing: 1px;
+
+        line-height: 1.4;
+    }
+
+
+    h1 span {
+
+        letter-spacing: 2px;
+    }
+
+
+    /* Gold line */
+
+    .gold-line {
+
+        width: 190px;
+
+        margin-top: 13px;
+    }
+
+
+    .gold-line span {
+
+        width: 58px;
+    }
+
+
+    /* Description */
+
+    p {
+
+        max-width: 310px;
+
+        margin-top: 12px;
+
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Button */
+
+    .explore-button {
+
+        width: 205px;
+
+        height: 50px;
+
+        margin-top: 21px;
+
+        font-size: 13px;
+    }
+
+
+    /* Bottom */
+
+    .bottom-text {
+
+        margin-top: 18px;
+
+        font-size: 7px;
+
+        letter-spacing: 4px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .home {
+        width: 100%;
+        height: 100svh;
+
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .content {
+        padding: 20px 18px 25px;
+    }
+
+    .logo-container {
+        width: 190px;
+        height: 190px;
+    }
+
+    .logo {
+        width: 175px;
+        height: 175px;
+    }
+
+    .logo-glow {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        margin-top: 15px;
+        font-size: 21px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    h1 span {
+        letter-spacing: 2px;
+    }
+
+    .gold-line {
+        width: 190px;
+        margin-top: 13px;
+    }
+
+    .gold-line span {
+        width: 58px;
+    }
+
+    p {
+        max-width: 310px;
+        margin-top: 12px;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .explore-button {
+        width: 205px;
+        height: 50px;
+        margin-top: 21px;
+        font-size: 13px;
+    }
+
+    .bottom-text {
+        margin-top: 18px;
+        font-size: 7px;
+        letter-spacing: 4px;
+    }
+}
